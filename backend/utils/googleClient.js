@@ -1,0 +1,13 @@
+const { google } = require('googleapis');
+
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+
+// Update the redirect URI to match your registered one
+const REDIRECT_URI = 'http://localhost:5173/code'; // Make sure this matches your setup
+
+exports.oauth2Client = new google.auth.OAuth2(
+    GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET,
+    REDIRECT_URI
+);
